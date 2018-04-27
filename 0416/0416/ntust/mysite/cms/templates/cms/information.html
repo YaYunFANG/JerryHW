@@ -1,0 +1,50 @@
+<h1>名單</h1>
+{% for r in name %}
+<h2>{{ r.name }}</h2>
+	<p>電話：{{ r.phone_number }}</p>		
+	<p>地址：{{ r.address }}</p>		
+{% if r.gender_set.all %}
+<table class="table">
+	<tr>
+		<th>性別</th>		
+	</tr>
+	{% for gender in r.gender_set.all %}
+	<tr>
+		<td>{{ gender.sexuality }}</td>		
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+	<p>未輸入任何資訊</p>
+{% endif %}
+
+{% if r.birth_set.all %}
+<table class="table">
+	<tr>
+		<th>生日</th>		
+	</tr>
+	{% for birth in r.birth_set.all %}
+	<tr>
+		<td>{{birth.date }}</td>		
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+	<p>未輸入任何資訊</p>
+{% endif %}
+
+{% if r.introduction_set.all %}
+<table class="table">
+	<tr>
+		<th>自我介紹：</th>		
+	</tr>
+	{% for introduction in r.introduction_set.all %}
+	<tr>
+		<td>{{introduction.intro }}</td>		
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+	<p>未輸入任何資訊</p>
+{% endif %}
+{% endfor %}
