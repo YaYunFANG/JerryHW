@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+</head>
+<body>
+	<h2>Blog</h2>
+	<div align="left"><a href="/blog/new"><button>Post</button></a></div><hr>
+	{% for post in post_list %}
+		<div align="right">
+			<a href="/blog/edit?q={{ post.pk }}"><button>edit</button></a>
+			<form action="" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="pk" value="{{ post.pk }}">
+				<input type="submit" value="delete">
+			</form>
+		</div>
+		<h4>Title:</h4>{{ post.title }}
+		<h5>Content:</h5>{{ post.content }}<hr>
+	{% endfor %}
+</body>
+</html>

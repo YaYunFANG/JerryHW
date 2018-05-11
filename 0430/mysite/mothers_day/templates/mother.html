@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Mothers Day</title>
+</head>
+<body>
+	<form action="" method="post">
+		{% csrf_token %}
+		<textarea name="content"></textarea>
+		<input type="submit" value="submit">
+	</form><hr>
+	<h3>Content:</h3><br>
+	{{ content }}
+</body>
+</html>
