@@ -1,0 +1,22 @@
+<html> 
+<body> 
+your score: <input type="number" id='a' name="a" min="0" max="100" /> 
+
+<p><button onclick="check();">check</button>
+</p>
+<span id="result"></span> 
+</body> 
+<script> 
+function check() {
+var  re;
+var a = parseFloat(document.getElementById('a').value); 
+if (a>=60){
+	re= "及格"
+}else{
+	re= "不及格"
+}
+document.getElementById('result').innerText = re; 
+} 
+
+</script> 
+</html> 

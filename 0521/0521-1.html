@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body> 
+a: <input type="number" id='a' name="a"/><br> 
+b: <input type="number" id='b' name="b"/><br> 
+<p><button onclick="add();">加</button>
+<button onclick="min();">減</button>
+<button onclick="pro();">乘</button>
+<button onclick="div();">除</button></p>
+<span id="result"></span> 
+</body> 
+<script> 
+function add() { 
+var a = parseFloat(document.getElementById('a').value); 
+var b = parseFloat(document.getElementById('b').value); 
+document.getElementById('result').innerText = a+b; 
+} 
+function min() { 
+var a = parseFloat(document.getElementById('a').value); 
+var b = parseFloat(document.getElementById('b').value); 
+document.getElementById('result').innerText = a-b; 
+} 
+function pro() { 
+var a = parseFloat(document.getElementById('a').value); 
+var b = parseFloat(document.getElementById('b').value); 
+document.getElementById('result').innerText = a*b; 
+} 
+function div() { 
+var a = parseFloat(document.getElementById('a').value); 
+var b = parseFloat(document.getElementById('b').value); 
+document.getElementById('result').innerText = a/b; 
+} 
+</script> 
+</html> 
